@@ -3,7 +3,7 @@ name: Deploy Jekyll with GitHub Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ${{ vars.PAGES_BRANCH }}
+    branches: "${{ vars.PAGES_BRANCH }}"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
