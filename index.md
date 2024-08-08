@@ -16,7 +16,7 @@ abstract: The "computable" numbers may be described briefly as the real numbers 
 
 carousels:
   - images: 
-    - image: ManègeLR1.jpg
+    - image: ManegeLR1.jpg
     - image: Floris_Carousel.jpg
     - image: Carrousel-LouisXIV-1662.jpg
     - image: Turing_machine.png
