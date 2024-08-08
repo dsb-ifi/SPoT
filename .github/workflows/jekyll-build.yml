@@ -31,8 +31,13 @@ jobs:
         with:
           repository: dsb-ifi/project-template
           ref: main
+          path: .
       - name: Checkout content
         uses: actions/checkout@v4
+        with:
+          path: .
+      - name: test contents
+        run: ls -ll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
