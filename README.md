@@ -18,10 +18,25 @@ Then you can see the website at `http://127.0.0.1:4000`.
 
 ## To use it
 
-- You need to copy the `gh-pages` branch into your repository and update the [index.md](/index.md).  For instance
+- You need to copy from the `gh-pages` branch the `index.md` and workflow (`jekyll-build.yml`) files into your repository, and update the [index.md](/index.md).  For instance
   ```bash
+  # create the local gh-pages
+  git switch -b gh-pages
+
+  # add the template remote
   git remote add template https://github.com/dsb-ifi/project-template.git
-  git checkout -b gh-pages template/gh-pages
+  # get the branch from the templates
+  git checkout template/gh-pages
+  # checkout the files you need
+  git checkout template/gh-pages -- index.md .github/workflows/jekyll-build.yml
+
+  # add the files to your local branch and commit
+  git add index.md .github/workflows/jekyll-build.yml
+  git commit index.md .github/workflows/jekyll-build.yml -m "Add template files"
+  
+  # remove the remote
   git remote rm template
+
+  # Update index.md with your information
   ```
 - In your repository, make sure that the `gh-pages` has permission within the "Deployment branches and tags"
