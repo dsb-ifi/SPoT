@@ -25,15 +25,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout content
-        uses: actions/checkout@v4
-        with:
-          path: ./
       - name: Checkout project-template
         uses: actions/checkout@v4
         with:
           repository: dsb-ifi/project-template
           ref: main
+          path: ./
+      - name: Checkout content
+        uses: actions/checkout@v4
+        with:
           path: ./
       - name: Setup Pages
         uses: actions/configure-pages@v5
