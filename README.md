@@ -18,5 +18,10 @@ Then you can see the website at `http://127.0.0.1:4000`.
 
 ## To use it
 
-- You need to copy the `gh-pages` branch into your repository and update the [index.md](/index.md)
+- You need to copy the `gh-pages` branch into your repository and update the [index.md](/index.md).  For instance
+  ```bash
+  git remote add template https://github.com/dsb-ifi/project-template.git
+  git checkout -b gh-pages template/gh-pages
+  git remote rm template
+  ```
 - In your repository, make sure that the `gh-pages` has permission within the "Deployment branches and tags"
