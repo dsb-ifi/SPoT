@@ -18,4 +18,5 @@ Then you can see the website at `http://127.0.0.1:4000`.
 
 ## To use it
 
-You need to copy the `gh-pages` branch into your repository and update the [index.md](/index.md)
+- You need to copy the `gh-pages` branch into your repository and update the [index.md](/index.md)
+- In your repository, make sure that the `gh-pages` has permission within the "Deployment branches and tags"
