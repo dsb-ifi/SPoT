@@ -29,8 +29,14 @@ Then you can see the website at `http://127.0.0.1:4000`.
   git checkout template/gh-pages
   # checkout the files you need
   git checkout template/gh-pages -- index.md .github/workflows/jekyll-build.yml
+
+  # add the files to your local branch and commit
+  git add index.md .github/workflows/jekyll-build.yml
+  git commit index.md .github/workflows/jekyll-build.yml -m "Add template files"
   
   # remove the remote
   git remote rm template
+
+  # Update index.md with your information
   ```
 - In your repository, make sure that the `gh-pages` has permission within the "Deployment branches and tags"
