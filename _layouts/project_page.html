@@ -61,14 +61,7 @@
           <div class="is-size-5 publication-authors">
             {% for author in page.authors %}
               <span class="author-block">
-              {% if author.link %}
-              <a href="{{ author.link }}">
-              {% endif %}
-              {{ author.name }}
-              {% if author.link %}
-              </a> 
-              {% endif %}
-              {% if author.affiliation %}<sup>{{ author.affiliation }}</sup>{% endif %}
+              {% if author.link %}<a href="{{ author.link }}">{% endif %}{{ author.name }}{% if author.link %}</a>{% endif %} {% if author.affiliation %}<sup>{{ author.affiliation }}</sup>{% endif %}
               </span>
             {% endfor %}
           </div>
@@ -79,14 +72,7 @@
             {% assign idx = 1 %}
             {% for affiliation in page.affiliations %}
               <span class="affiliations-block">
-                <sup>{{ idx }}</sup>
-                {% if affiliation.link %}
-                <a href="{{ affiliation.link }}">
-                {% endif %}
-                {{ affiliation.name }}
-                {% if affiliation.link %}
-                </a> 
-                {% endif %}
+                <sup>{{ idx }}</sup> {% if affiliation.link %}<a href="{{ affiliation.link }}">{% endif %}{{ affiliation.name }}{% if affiliation.link %}</a>{% endif %}
               </span>
               {% assign idx = idx | plus: 1 %}
             {% endfor %}
