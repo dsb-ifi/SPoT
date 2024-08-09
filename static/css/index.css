@@ -87,6 +87,11 @@ body {
   display: inline-block;
 }
 
+.affiliations-block {
+  display: inline-block;
+  font-size: .8em;
+}
+
 .publication-banner img {
 }
 
