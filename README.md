@@ -21,12 +21,12 @@ Then you can see the website at `http://127.0.0.1:4000`.
 - You need to copy from the `gh-pages` branch the `index.md` and workflow (`jekyll-build.yml`) files into your repository, and update the [index.md](/index.md).  For instance
   ```bash
   # create the local gh-pages
-  git switch -b gh-pages
+  git checkout -b gh-pages
 
   # add the template remote
   git remote add template https://github.com/dsb-ifi/project-template.git
   # get the branch from the templates
-  git checkout template/gh-pages
+  git fetch template gh-pages
   # checkout the files you need
   git checkout template/gh-pages -- index.md .github/workflows/jekyll-build.yml
 
