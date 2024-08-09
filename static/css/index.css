@@ -85,11 +85,23 @@ body {
 
 .author-block {
   display: inline-block;
+  margin-left: .25em;
+  margin-right: .25em;
+
+  & sup {
+    font-size: .6em;
+  }
 }
 
 .affiliations-block {
   display: inline-block;
   font-size: .8em;
+  margin-left: .25em;
+  margin-right: .25em;
+
+  & sup {
+    font-size: .6em;
+  }
 }
 
 .publication-banner img {
