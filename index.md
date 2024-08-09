@@ -4,9 +4,14 @@ permalink: /
 
 title: Your title goes here
 authors:
-    John Doe
+    - name: John Doe
+      link: https://en.wikipedia.org/wiki/John_Doe
+      affiliation: 1
+    - name: Jane Doe
+      affiliation: 1
 affiliations:
-    University of Oslo
+    - name: University of Oslo
+      link: https://uio.no
 paper: https://arxiv.org
 video: https://www.youtube.com/@UniOslo
 code: https://github.com/dsb-ifi
