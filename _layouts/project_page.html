@@ -22,12 +22,24 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ '/static/css/bulma.min.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <style>
+    /* page-specific CSS goes here */
+    .footer a:hover {
+      color: {% if page.accent %}{{ page.accent }}{% else %}black{% endif %};
+    }
+    .publication-authors a:hover {
+      color: {% if page.accent %}{{ page.accent }}{% else %}hsl(204, 86%, 53%){% endif %} !important;
+    }
+    .link-block .button:hover  {
+      background-color: {% if page.accent %}{{ page.accent }}{% else %}black{% endif %};
+    } 
+  </style>
 
   <!-- MathJax -->
   <script>
@@ -167,8 +179,9 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            Powered by an <a href="https://github.com/dsb-ifi/project-template">updated</a> <a href="https://github.com/shunzh/project_website">jekyllized</a> version of <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> style. 
+            Powered by an <a class="updated" href="https://github.com/dsb-ifi/project-template">updated</a> <a href="https://github.com/shunzh/project_website">jekyllized</a> version of <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> style. <a id="smiley"></a> 
           </p>
+          
         </div>
       </div>
     </div>
