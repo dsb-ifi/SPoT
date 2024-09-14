@@ -2,6 +2,10 @@
 layout: project_page
 permalink: /
 
+# You can declare accent colors here
+# accent: '#D21111'
+# accent: darkorange
+
 title: Your title goes here
 authors:
     - name: John Doe
