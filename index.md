@@ -43,6 +43,16 @@ carousels:
     - image: figures/other/whale.png
 ---
 
+<style>
+.carousel img {
+  max-height: 200px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
 {% include carousel.html height="50" unit="%" number="1" %}
 
 ## Background
