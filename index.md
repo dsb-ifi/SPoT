@@ -45,7 +45,6 @@ carousels:
 
 {% include carousel.html height="300" unit="px" number="1" %}
 
-## Background
 Sparsity - the fine art of doing more with less - is an attractive prospect in systems design and modeling.
 As models grow ever larger, sparse features alleviates the computational demands of a model to provide lower latency, lower memory overhead, and higher throughput - all indispensable properties for real-time applications.
 Incidentally, sparse selection of features offers inherent interpretability and transparency for increasingly complex models
