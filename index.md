@@ -53,6 +53,8 @@ By allowing patches to occupy continuous subpixel positions instead of constrain
 We denote a ViT encoder as $g_\theta : \mathcal{I} \times \Omega \to \mathbb{R}^d$, where $\mathcal{I}$ is a dataset of source images, and $\Omega$ is a space of positions from which to sample image features.
 With standard tokenization $\Omega_\text{grid}$ is a fixed, discrete set of non-overlapping square patches tiling the image with a fixed window size on a grid of pixels.
 The sparse feature selection (SFS) problem can then be formulated as 
+
+
 $$
 \begin{align}
 \min_\phi \mathbb{E}_{S \sim p_\phi} \big[\mathcal{L}(g_\theta(I,S), y) \big] \ 
@@ -75,11 +77,15 @@ Instead of considering $\Omega$ as a fixed discrete partition, we instead imagin
 We parametrize a subset of positions $S = \{ s_1, \dots, s_m \}$ as a set of points of interest from which to extract features from within an image.
 By sampling tokens from continuous subpixel positions, our tokenizer directly addresses the intrinsic *misalignment* issue imposed by traditional grid‐based methods, as illustrated in \Cref{fig:sfs-misalignment}. 
 To tackle the *combinatorial search* problem, we use a bilinear interpolation function $q$ and window size $k$, each subpixel position $s_i = (h,w)$ provides an extracted feature
+
+
 $$
 \begin{align}
 I_q(s_i ; k) &= I_q(h-\tfrac{k}{2}\!:\!h+\tfrac{k}{2}, \; w-\tfrac{k}{2}\!:\!w+\tfrac{k}{2}).
 \end{align}
 $$
+
+
 This allows us to formulate SFS as a continuous, probabilistic optimization problem rather than an intractable discrete subset‐selection.
 The key insight is that our novel tokenizer allows us to (1) investigate placing *different priors* on $p_\phi$, and (2) use *gradient based optimization* to search for $S$ by way of gradients through $I_q$.
 Since we select $q$ to be bilinear, its partial derivatives w.r.t. $s$ exist everywhere except at pixel boundaries, so gradients propagate cleanly back to the placements $\{s_1,\dots,s_m\}$.
