@@ -33,7 +33,7 @@ code: https://github.com/dsb-ifi/SPoT
 abstract: Vision Transformers naturally accommodate sparsity, yet standard tokenization methods confine features to discrete patch grids. This constraint prevents models from fully exploiting sparse regimes, forcing awkward compromises. We propose Subpixel Placement of Tokens (SPoT), a novel tokenization strategy that positions tokens continuously within images, effectively sidestepping grid-based limitations. With our proposed oracle-guided search, we uncover substantial performance gains achievable with ideal subpixel token positioning, drastically reducing the number of tokens necessary for accurate predictions during inference. SPoT, thus, opens a promising direction for flexible, efficient, and interpretable ViT architectures, redefining sparsity as a strategic advantage rather than an imposed limitation.
 ---
 
-<object data="figures/pdf/ladybug.pdf" width="1000" height="1000" type='application/pdf'></object>
+![Ladybug](/figures/other/ladybug.png)
 
 ## Background
 Sparsity - the fine art of doing more with less - is an attractive prospect in systems design and modeling.
