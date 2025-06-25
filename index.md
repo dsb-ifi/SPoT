@@ -109,6 +109,9 @@ This means that models can be evaluated with the exact same features as a standa
 By removing the strict adherence to grids in ViTs, we can leverage more continuous spatial priors for token placements for optimal feature extraction.
 We compare several spatial priors, each encoding different assumptions about feature importance and spatial distribution.
 
+![Spatial Priors](/figures/spatialprior.png)
+*Figure 1: An illustration of different spatial priors investigated with SPoT.*
+
 - *Uniform*: randomly samples locations with no spatial bias, assuming all regions are equally important.
 - *Gaussian*: randomly samples locations with a central bias, which encodes a prior belief that subjects are typically centered in images.
 - *Sobol*: provides quasirandom sampling aimed at uniform coverage while reducing overlap.
@@ -121,10 +124,16 @@ We compare several spatial priors, each encoding different assumptions about fea
 In addition to investigating spatial different spatial priors, we also look to directly explore differentiable optimization for token placement.
 To probe for ideal choices of $S = \{s_1, \dots, s_m \}$, we optimize a constrained version of the SFS problem directly for each image. 
 We freeze the encoder $g_\theta$, and optimize
+
+
 $$
+\begin{align}
 \underset{S}{\arg\min} \; \big[ \mathcal{L}(g_\theta(I,S), y) \big] \ 
 \text{s.t.}\ S \subseteq \Omega_\text{subpix}, \ |S| = m
+\end{align}
 $$
+
+
 for a set number of tokens $m$ with initial positions ${S^0 \sim p_\phi}$ sampled from a chosen prior $p_\phi$.
 Gradient optimization provides an *Oracle Neighborhood guided* (ON) adjustments of the initial placements with SPoT.  
 SPoT-ON reveals locations are optimal for classifying each image, which allows us to ascertain the existence of an optimal set of positions $S$ for each image, and estimate an upper bound on performance gain from effective token sampling.
