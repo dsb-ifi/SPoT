@@ -54,8 +54,10 @@ We denote a ViT encoder as $g_\theta : \mathcal{I} \times \Omega \to \mathbb{R}^
 With standard tokenization $\Omega_\text{grid}$ is a fixed, discrete set of non-overlapping square patches tiling the image with a fixed window size on a grid of pixels.
 The sparse feature selection (SFS) problem can then be formulated as 
 $$
+\begin{align}
 \min_\phi \mathbb{E}_{S \sim p_\phi} \big[\mathcal{L}(g_\theta(I,S), y) \big] \ 
 \text{s.t.}\ S \subseteq \Omega, \,\,\, |S| \ll |\Omega|.
+\end{align}
 $$
 
 In other words, we are looking for a probability distribution $p_\phi$ over subsets of $\Omega$ that minimizes a loss function $\mathcal{L}$.
@@ -74,7 +76,9 @@ We parametrize a subset of positions $S = \{ s_1, \dots, s_m \}$ as a set of poi
 By sampling tokens from continuous subpixel positions, our tokenizer directly addresses the intrinsic *misalignment* issue imposed by traditional grid‐based methods, as illustrated in \Cref{fig:sfs-misalignment}. 
 To tackle the *combinatorial search* problem, we use a bilinear interpolation function $q$ and window size $k$, each subpixel position $s_i = (h,w)$ provides an extracted feature
 $$
+\begin{align}
 I_q(s_i ; k) &= I_q(h-\tfrac{k}{2}\!:\!h+\tfrac{k}{2}, \; w-\tfrac{k}{2}\!:\!w+\tfrac{k}{2}).
+\end{align}
 $$
 This allows us to formulate SFS as a continuous, probabilistic optimization problem rather than an intractable discrete subset‐selection.
 The key insight is that our novel tokenizer allows us to (1) investigate placing *different priors* on $p_\phi$, and (2) use *gradient based optimization* to search for $S$ by way of gradients through $I_q$.
