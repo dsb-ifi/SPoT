@@ -43,7 +43,7 @@ carousels:
     - image: figures/other/whale.png
 ---
 
-{% include carousel.html height="50" unit="%" number="1" %}
+{% include carousel.html height="300" unit="px" number="1" %}
 
 ## Background
 Sparsity - the fine art of doing more with less - is an attractive prospect in systems design and modeling.
