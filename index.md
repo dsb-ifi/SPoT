@@ -210,6 +210,17 @@ Our results show that center-bias in spatial priors is beneficial in sparse regi
 
 ---
 
+#### Performance Gap
+
+![Performance Gap](/figures/gap.png)
+*Figure 4: We show ImageNet1k accuracy vs throughput with 5 models at four sparsity levels. The ceiling area denotes performance unlikely to be achieved given the intrinsic label noise in ImageNet. The gap highlights the margin between SPoT  with optimal configuration and SPoT-ON, illustrating possible performance gain through better token placement.*
+
+Figure 4 shows image throughput versus accuracy, comparing SPoT with the baselines across varying sparsity levels. 
+As sparsity increases, throughput improves significantly, albeit with an associated trade-off in accuracy. 
+Notably, SPoT achieves the most favorable trade-off, maintaining substantially more of the full-model accuracy while enabling higher throughput than competing approaches. 
+We observe only slight variation in throughput between the models at each sparsity level, indicating that SPoT incurs very minimal computational overhead compared to baselines.
+Our oracle-guided variant SPoT-ON is included in the figure, and illustrates a ceiling on achievable performance in sparse regimes when placements are ideally sampled.
+
 ## Summary
 
 SPoT is a novel flexible tokenization framework for Vision Transformers that naturally adapts to sparse feature selection, and provides inherent methods for discovering optimal subpixel placements for extracting optimal features for prediction tasks.
