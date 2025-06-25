@@ -140,6 +140,10 @@ for a set number of tokens $m$ with initial positions ${S^0 \sim p_\phi}$ sample
 Gradient optimization provides an *Oracle Neighborhood guided* (ON) adjustments of the initial placements with SPoT.  
 SPoT-ON reveals locations are optimal for classifying each image, which allows us to ascertain the existence of an optimal set of positions $S$ for each image, and estimate an upper bound on performance gain from effective token sampling.
 
+![Oracle Placements](/figures/placements.png)
+*Figure 3: Illustration of oracle placements with 25 tokens with SPoT-ON. By optimizing our oracle-neighborhood search through the model, the oracle discovers optimal placement of points, yielding an accuracy of $90.9\%$ on ImageNet1k with only $\sim12.5\%$ of the tokens. Trajectories are colored with dark purple for initial points, and endpoints colored bright yellow.*
+
+
 
 ## Experiments and Key Findings
 
