@@ -31,16 +31,7 @@ code: https://github.com/dsb-ifi/SPoT
 # data: https://huggingface.co/docs/
 
 abstract: Vision Transformers naturally accommodate sparsity, yet standard tokenization methods confine features to discrete patch grids. This constraint prevents models from fully exploiting sparse regimes, forcing awkward compromises. We propose Subpixel Placement of Tokens (SPoT), a novel tokenization strategy that positions tokens continuously within images, effectively sidestepping grid-based limitations. With our proposed oracle-guided search, we uncover substantial performance gains achievable with ideal subpixel token positioning, drastically reducing the number of tokens necessary for accurate predictions during inference. SPoT, thus, opens a promising direction for flexible, efficient, and interpretable ViT architectures, redefining sparsity as a strategic advantage rather than an imposed limitation.
-# carousels:
-#   - images: 
-#     - image: ManegeLR1.jpg
-#     - image: Floris_Carousel.jpg
-#     - image: Carrousel-LouisXIV-1662.jpg
-#     - image: Turing_machine.png
 ---
-
-<!-- Information about the carousel: https://talk.jekyllrb.com/t/slider-carousel-in-minimal-theme/6782/3 -->
-<!-- {% include carousel.html height="50" unit="%" number="1" %} -->
 
 <object data="figures/pdf/ladybug.pdf" width="1000" height="1000" type='application/pdf'></object>
 
