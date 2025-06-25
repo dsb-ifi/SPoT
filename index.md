@@ -79,7 +79,12 @@ Three specific issues arise from the ViT sparse sampling problem;
 2. **Combinatorial search**: The discrete nature of $\Omega_\text{grid}$ means that selecting a subset of tokens is combinatorial knapsack problem. This makes search difficult and gradient methods intractable, particularly since cardinality-constrained subset selection is NP-hard.
 3. **Misalignment**: By quantizing patches to a fixed grid, key patterns for discriminating an image could be missed in SFS. Concretely, if the grid imposed by $\Omega_\text{grid}$ is misaligned with key features in the image, SFS could be challenging, as a central shape or texture may be spread over multiple patches, making subset selection more challenging. 
 
-These issues hinder efficient optimization of SFS under standard tokenization.
+These issues hinder efficient optimization of SFS under standard tokenization - in other words, we posit that **grids cannot align every salient region**.
+
+![Issues with Grid Tokenization](/figures/spatialprior.png)
+*Figure 1: A $5 \times 5$ patch grid (gray) with three optimal region placements for sparse feature selection. **(a)** The green patch is well aligned (A), yellow straddles two cells (B), and red lies on a corner (C) and leaks into four cells. Translating the grid only swaps which peak is misaligned---one patch is always bad. **(b)** Our subpixel tokenizer drops fixed-size windows (\textcolor{ok}{green} squares) directly on each peak, eliminating the alignment trade-off while still allowing conventional grid tokens when they \emph{are} well aligned.*
+
+
 
 ## Methodology: SPoT in a Nutshell
 We propose a more flexible tokenization scheme to tackle SFS problems in ViTs. 
@@ -110,7 +115,7 @@ By removing the strict adherence to grids in ViTs, we can leverage more continuo
 We compare several spatial priors, each encoding different assumptions about feature importance and spatial distribution.
 
 ![Spatial Priors](/figures/spatialprior.png)
-*Figure 1: An illustration of different spatial priors investigated with SPoT.*
+*Figure 2: An illustration of different spatial priors investigated with SPoT.*
 
 - *Uniform*: randomly samples locations with no spatial bias, assuming all regions are equally important.
 - *Gaussian*: randomly samples locations with a central bias, which encodes a prior belief that subjects are typically centered in images.
