@@ -36,24 +36,14 @@ carousels:
   - images: 
     - image: figures/other/bird.png
     - image: figures/other/doggy.png
-    - image: figures/other/ladybird.png
+    - image: figures/other/ladybug.png
     - image: figures/other/lionfish.png
     - image: figures/other/snake.png
     - image: figures/other/van.png
     - image: figures/other/whale.png
 ---
 
-<style>
-.carousel img {
-  max-height: 200px;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
-
-{% include carousel.html height="50" unit="%" number="1" %}
+{% include carousel.html height="50" unit="%" number="2" %}
 
 ## Background
 Sparsity - the fine art of doing more with less - is an attractive prospect in systems design and modeling.
