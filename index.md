@@ -8,7 +8,7 @@ permalink: /
 
 title: "SPoT: Subpixel Placement of Tokens in Vision Transformers"
 authors: 
-  - name: Martine Hjelkrem Tan
+  - name: Martine Hjelkrem-Tan
     link: https://www.mn.uio.no/ifi/english/people/aca/matan/
     affiliation: 1
   - name: Marius Aasan
@@ -227,14 +227,11 @@ Specifically, integrating efficient saliency-driven objectives or heuristics dur
 
 {% raw %}
 ```
-@article{tan2025spot,
-  title={On computable numbers, with an application to the Entscheidungsproblem},
-  author={Turing, Alan Mathison},
-  journal={Journal of Mathematics},
-  volume={58},
-  number={345-363},
-  pages={5},
-  year={1936}
+@article{hjelkremtan2025spot,
+  title={SPoT: Subpixel Placement of Tokens in Vision Transformers},
+  author={Hjelkrem-Tan, Martine and Aasan, Marius and Yanci Arteaga, Gabriel, and Ram\'irez Rivera, Ad\'in},
+  journal={{CVF/ICCV} Efficient Computing under Limited Resources: Visual Computing ({ECLR} {ICCVW})},
+  year={2025}
 }
 ```
 {% endraw %}
