@@ -82,9 +82,7 @@ Three specific issues arise from the ViT sparse sampling problem;
 These issues hinder efficient optimization of SFS under standard tokenization - in other words, we posit that **grids cannot align every salient region**.
 
 ![Issues with Grid Tokenization](/figures/nocover.png)
-<div align="center">
 *Figure 1: A $5 \times 5$ patch grid (gray) with three optimal region placements for sparse feature selection. **(a)** The green patch is well aligned (A), yellow straddles two cells (B), and red lies on a corner (C) and leaks into four cells. Translating the grid only swaps which peak is misaligned---one patch is always bad. **(b)** Our subpixel tokenizer drops fixed-size windows (\textcolor{ok}{green} squares) directly on each peak, eliminating the alignment trade-off while still allowing conventional grid tokens when they \emph{are} well aligned.*
-</div>
 
 
 ## Methodology: SPoT in a Nutshell
@@ -115,12 +113,6 @@ This means that models can be evaluated with the exact same features as a standa
 By removing the strict adherence to grids in ViTs, we can leverage more continuous spatial priors for token placements for optimal feature extraction.
 We compare several spatial priors, each encoding different assumptions about feature importance and spatial distribution.
 
-
-![Spatial Priors](/figures/spatialprior.png)
-<div align="center">
-*Figure 2: An illustration of different spatial priors investigated with SPoT.*
-</div>
-
 - *Uniform*: randomly samples locations with no spatial bias, assuming all regions are equally important.
 - *Gaussian*: randomly samples locations with a central bias, which encodes a prior belief that subjects are typically centered in images.
 - *Sobol*: provides quasirandom sampling aimed at uniform coverage while reducing overlap.
@@ -128,6 +120,8 @@ We compare several spatial priors, each encoding different assumptions about fea
 - *Center*: deterministically distributes tokens evenly with slight central-bias.
 - *Salient*: encodes object-centric bias by placing tokens based on regions identified as visually salient from a pretrained saliency model.
 
+![Spatial Priors](/figures/spatialprior.png)
+*Figure 2: An illustration of different spatial priors investigated with SPoT.*
 
 ### Exploring Oracle Neighbourhoods with SPoT-ON
 In addition to investigating spatial different spatial priors, we also look to directly explore differentiable optimization for token placement.
