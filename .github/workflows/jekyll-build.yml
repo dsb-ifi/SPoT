@@ -38,10 +38,10 @@ jobs:
       - name: Move template and contents (including hidden)
         run: |
           shopt -s dotglob
-          mv template/* .
-          mv template/.[!.]* .
-          mv contents/* .
-          mv contents/.[!.]* .
+          mv template/* . || true
+          mv template/.[!.]* . || true
+          mv contents/* . || true
+          mv contents/.[!.]* . || true
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
