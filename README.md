@@ -1,42 +1,68 @@
-# Project Website
+<div align="center">
 
-This repository updates the [jekyllized version](https://github.com/shunzh/project_website) of the source code for the [Nerfies website](https://nerfies.github.io).
-You only need to change the content of [index.md](/index.md). 
-It's possible to only write in markdown, but you can also use HTML to achieve fancier effects.
+# SPoT: Subpixel Placement of Tokens in Vision Transformers
 
-Here is this repository [example website](https://dsb-ifi.github.io/project-template/).
+**[Martine Hjelkrem-Tan](https://www.mn.uio.no/ifi/english/people/aca/matan/), [Marius Aasan](https://www.mn.uio.no/ifi/english/people/aca/mariuaas/), [Gabriel Yanci Arteaga](https://www.mn.uio.no/math/english/people/aca/gabrieya/), [Adín Ramírez Rivera](https://www.mn.uio.no/ifi/english/people/aca/adinr/)** <br>
 
-## Test it locally
 
-Install [Jekyll](https://jekyllrb.com/docs/installation/), and run
+**[DSB @ IFI @ UiO](https://www.mn.uio.no/ifi/english/research/groups/dsb/)** <br>
+
+[![Website](https://img.shields.io/badge/Website-green)](https://dsb-ifi.github.io/SPoT/)
+[![PaperArxiv](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org)
+[![PaperICCVW](https://img.shields.io/badge/Paper-ICCVW_2025-blue)](https://eclr-workshop.github.io/)
+[![NotebookExample](https://img.shields.io/badge/Notebook-Example-orange)](https://nbviewer.jupyter.org) <br>
+
+![SPoT Figure 1](/assets/placements.png#gh-light-mode-only "Examples of feature trajectoreis with SPoT-ON")
+![SPoT Figure 1](/assets/placements.png#gh-dark-mode-only "Examples of feature trajectoreis with SPoT-ON")
+
+</div>
+
+## SPoT: Subpixel Placement of Tokens
+
+This repo contains code and weights for **SPoT: Subpixel Placement of Tokens**, accepted for ECLR, ICCVW 2025.
+
+For an introduction to our work, visit the [project webpage](https://dsb-ifi.github.io/SPoT/). 
+
+## Installation
+
+The package can currently be installed via:
+
+```bash
+# HTTPS
+pip install git+https://github.com/dsb-ifi/SPoT.git
+
+# SSH
+pip install git+ssh://git@github.com/dsb-ifi/SPoT.git
 ```
-jekyll serve
+
+## Loading models
+
+You can load the Superpixel Transformer model easily via `torch.hub`:
+
+```python
+model = torch.hub.load(
+    'dsb-ifi/spot', 
+    'spot_vit_base_16_in21k',
+    pretrained=True,
+    source='github',
+)
 ```
-in this directory.
 
-Then you can see the website at `http://127.0.0.1:4000`.
+This will load the model and downloaded the pretrained weights, stored in your local `torch.hub` directory. 
 
-## To use it
+## More Examples
 
-- You need to copy from the `gh-pages` branch the `index.md` and workflow (`jekyll-build.yml`) files into your repository, and update the [index.md](/index.md).  For instance
-  ```bash
-  # create the local gh-pages
-  git checkout -b gh-pages
+We provide a [Jupyter notebook](https://nbviewer.jupyter.org/) as a sandbox for loading, evaluating, and extracting token placements for the models. 
 
-  # add the template remote
-  git remote add template https://github.com/dsb-ifi/project-template.git
-  # get the branch from the templates
-  git fetch template gh-pages
-  # checkout the files you need
-  git checkout template/gh-pages -- index.md .github/workflows/jekyll-build.yml
+## Citation
 
-  # add the files to your local branch and commit
-  git add index.md .github/workflows/jekyll-build.yml
-  git commit index.md .github/workflows/jekyll-build.yml -m "Add template files"
-  
-  # remove the remote
-  git remote rm template
+If you find our work useful, please consider citing our paper.
 
-  # Update index.md with your information
-  ```
-- In your repository, make sure that the `gh-pages` has permission within the "Deployment branches and tags"
+```
+@inproceedings{hjelkremtan2025spot,
+  title={SPoT: Subpixel Placement of Tokens in Vision Transformers},
+  author={Hjelkrem-Tan, Martine and Aasan, Marius and Yanci Arteaga, Gabriel, and Ram\'irez Rivera, Ad\'in},
+  journal={{CVF/ICCV} Efficient Computing under Limited Resources: Visual Computing ({ECLR} {ICCVW})},
+  year={2025}
+}
+```
