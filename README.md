@@ -2,7 +2,7 @@
 
 # SPoT: Subpixel Placement of Tokens in Vision Transformers
 
-**[Martine Hjelkrem-Tan](https://www.mn.uio.no/ifi/english/people/aca/matan/), [Marius Aasan](https://www.mn.uio.no/ifi/english/people/aca/mariuaas/), [Gabriel Yanci Arteaga](https://www.mn.uio.no/math/english/people/aca/gabrieya/), [Adín Ramírez Rivera](https://www.mn.uio.no/ifi/english/people/aca/adinr/)** <br>
+**[Martine Hjelkrem-Tan](https://www.mn.uio.no/ifi/english/people/aca/matan/), [Marius Aasan](https://www.mn.uio.no/ifi/english/people/aca/mariuaas/), [Gabriel Yanci Arteaga](https://www.mn.uio.no/ifi/english/people/aca/gabrieya/), [Adín Ramírez Rivera](https://www.mn.uio.no/ifi/english/people/aca/adinr/)** <br>
 
 
 **[DSB @ IFI @ UiO](https://www.mn.uio.no/ifi/english/research/groups/dsb/)** <br>
