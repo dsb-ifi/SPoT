@@ -60,7 +60,7 @@ If you find our work useful, please consider citing our paper.
 
 ```
 @inproceedings{hjelkremtan2025spot,
-  title={SPoT: Subpixel Placement of Tokens in Vision Transformers},
+  title={{SPoT}: Subpixel Placement of Tokens in Vision Transformers},
   author={Hjelkrem-Tan, Martine and Aasan, Marius and Arteaga, Gabriel Y. and Ram\'irez Rivera, Ad\'in},
   journal={{CVF/ICCV} Efficient Computing under Limited Resources: Visual Computing ({ECLR} {ICCVW})},
   year={2025}
