@@ -25,7 +25,7 @@ affiliations:
     link: https://www.mn.uio.no/ifi/forskning/grupper/dsb/
   - name: SFI Visual Intelligence  
     link: https://www.visual-intelligence.no/
-paper: https://arxiv.org
+paper: https://arxiv.org/abs/2507.01654
 # video: https://www.youtube.com/@UniOslo
 code: https://github.com/dsb-ifi/SPoT
 # data: https://huggingface.co/docs/
