@@ -8,7 +8,7 @@
 **[DSB @ IFI @ UiO](https://www.mn.uio.no/ifi/english/research/groups/dsb/)** <br>
 
 [![Website](https://img.shields.io/badge/Website-green)](https://dsb-ifi.github.io/SPoT/)
-[![PaperArxiv](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org)
+[![PaperArxiv](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2507.01654)
 [![PaperICCVW](https://img.shields.io/badge/Paper-ICCVW_2025-blue)](https://eclr-workshop.github.io/)
 [![NotebookExample](https://img.shields.io/badge/Notebook-Example-orange)](https://nbviewer.jupyter.org) <br>
 
