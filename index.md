@@ -43,7 +43,8 @@ carousels:
     - image: figures/other/whale.png
 ---
 
-{% include carousel.html height="300" unit="px" number="1" %}
+![Tokenization pipeline](figures/pipeline.png)
+*Figure 1: (Left) Astandard ViT splits the image into a fixed grid of non-overlapping patches. (Right) With SPoT, an adaptively chosen subset of subpixel-precise patches are extracted.*
 
 Sparsity - the fine art of doing more with less - is an attractive prospect in systems design and modeling.
 As models grow ever larger, sparse features alleviates the computational demands of a model to provide lower latency, lower memory overhead, and higher throughput - all indispensable properties for real-time applications.
@@ -81,7 +82,7 @@ Three specific issues arise from the ViT sparse sampling problem;
 These issues hinder efficient optimization of SFS under standard tokenization - in other words, we posit that **grids cannot align every salient region**.
 
 ![Issues with Grid Tokenization](/figures/nocover.png)
-*Figure 1: A $5 \times 5$ patch grid (gray) with three optimal region placements for sparse feature selection. **(a)** The green patch is well aligned (A), yellow straddles two cells (B), and red lies on a corner (C) and leaks into four cells. Translating the grid only swaps which peak is misaligned---one patch is always bad. **(b)** Our subpixel tokenizer drops fixed-size windows (\textcolor{ok}{green} squares) directly on each peak, eliminating the alignment trade-off while still allowing conventional grid tokens when they \emph{are} well aligned.*
+*Figure 2: A $5 \times 5$ patch grid (gray) with three optimal region placements for sparse feature selection. **(a)** The green patch is well aligned (A), yellow straddles two cells (B), and red lies on a corner (C) and leaks into four cells. Translating the grid only swaps which peak is misaligned---one patch is always bad. **(b)** Our subpixel tokenizer drops fixed-size windows (\textcolor{ok}{green} squares) directly on each peak, eliminating the alignment trade-off while still allowing conventional grid tokens when they \emph{are} well aligned.*
 
 
 ## Methodology: SPoT in a Nutshell
@@ -120,7 +121,7 @@ We compare several spatial priors, each encoding different assumptions about fea
 - *Salient*: encodes object-centric bias by placing tokens based on regions identified as visually salient from a pretrained saliency model.
 
 ![Spatial Priors](/figures/spatialprior.png)
-*Figure 2: An illustration of different spatial priors investigated with SPoT.*
+*Figure 3: An illustration of different spatial priors investigated with SPoT.*
 
 ### Exploring Oracle Neighbourhoods with SPoT-ON
 In addition to investigating spatial different spatial priors, we also look to directly explore differentiable optimization for token placement.
@@ -141,7 +142,7 @@ Gradient optimization provides an *Oracle Neighborhood guided* (ON) adjustments 
 SPoT-ON reveals locations are optimal for classifying each image, which allows us to ascertain the existence of an optimal set of positions $S$ for each image, and estimate an upper bound on performance gain from effective token sampling.
 
 ![Oracle Placements](/figures/placements.png)
-*Figure 3: Illustration of oracle placements with 25 tokens with SPoT-ON. By optimizing our oracle-neighborhood search through the model, the oracle discovers optimal placement of points, yielding an accuracy of $90.9\%$ on ImageNet1k with only $\sim12.5\%$ of the tokens. Trajectories are colored with dark purple for initial points, and endpoints colored bright yellow.*
+*Figure 4: Illustration of oracle placements with 25 tokens with SPoT-ON. By optimizing our oracle-neighborhood search through the model, the oracle discovers optimal placement of points, yielding an accuracy of $90.9\%$ on ImageNet1k with only $\sim12.5\%$ of the tokens. Trajectories are colored with dark purple for initial points, and endpoints colored bright yellow.*
 
 
 
@@ -213,9 +214,9 @@ Our results show that center-bias in spatial priors is beneficial in sparse regi
 #### Performance Gap
 
 ![Performance Gap](/figures/gap.png)
-*Figure 4: We show ImageNet1k accuracy vs throughput with 5 models at four sparsity levels. The ceiling area denotes performance unlikely to be achieved given the intrinsic label noise in ImageNet. The gap highlights the margin between SPoT  with optimal configuration and SPoT-ON, illustrating possible performance gain through better token placement.*
+*Figure 5: We show ImageNet1k accuracy vs throughput with 5 models at four sparsity levels. The ceiling area denotes performance unlikely to be achieved given the intrinsic label noise in ImageNet. The gap highlights the margin between SPoT  with optimal configuration and SPoT-ON, illustrating possible performance gain through better token placement.*
 
-Figure 4 shows image throughput versus accuracy, comparing SPoT with the baselines across varying sparsity levels. 
+Figure 5 shows image throughput versus accuracy, comparing SPoT with the baselines across varying sparsity levels. 
 As sparsity increases, throughput improves significantly, albeit with an associated trade-off in accuracy. 
 Notably, SPoT achieves the most favorable trade-off, maintaining substantially more of the full-model accuracy while enabling higher throughput than competing approaches. 
 We observe only slight variation in throughput between the models at each sparsity level, indicating that SPoT incurs very minimal computational overhead compared to baselines.
