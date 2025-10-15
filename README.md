@@ -37,7 +37,7 @@ pip install git+ssh://git@github.com/dsb-ifi/SPoT.git
 
 ## Loading models
 
-You can load the Superpixel Transformer model easily via `torch.hub`:
+You can load the model easily via `torch.hub`:
 
 ```python
 model = torch.hub.load(
