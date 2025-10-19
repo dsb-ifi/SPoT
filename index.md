@@ -34,33 +34,14 @@ abstract: Vision Transformers naturally accommodate sparsity, yet standard token
 
 carousels:
   - images: 
-    - image: figures/spotapples.gif
-    - image: figures/spotdoggy.gif
-    - image: figures/spotlionfish.gif
-    - image: figures/spotparrot.gif
-    - image: figures/spotpenguin.gif
-    - image: figures/spotveil.gif
-    - image: figures/spotsnake.gif
+    - image: figures/spotapples_pad.gif
+    - image: figures/spotdoggy_pad.gif
+    - image: figures/spotlionfish_pad.gif
+    - image: figures/spotparrot_pad.gif
+    - image: figures/spotpenguin_pad.gif
+    - image: figures/spotveil_pad.gif
+    - image: figures/spotsnake_pad.gif
 ---
-
-<style>
-.carousel-item{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:300px;
-}
-
-/* Preserve square aspect: never stretch horizontally */
-.carousel-item img{
-  height:100%;
-  width:auto !important;
-  max-width:100%;
-  object-fit:contain;
-  display:block;
-  margin:0 auto;
-}
-</style>
 
 {% include carousel.html height="300" unit="px" number="1" %}
 
