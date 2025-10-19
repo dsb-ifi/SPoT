@@ -37,22 +37,28 @@ pip install git+ssh://git@github.com/dsb-ifi/SPoT.git
 
 ## Loading models
 
-You can load the model easily via `torch.hub`:
+To load the model, first download the checkpoints from [Google Drive](https://drive.google.com/drive/folders/1ZABszElqoD3U83KXaLCtamb8DyDJPBYB?usp=sharing).
+Then extract the checkpoints into a folder named `checkpoints/` in the repo.
 
-```python
-model = torch.hub.load(
-    'dsb-ifi/spot', 
-    'spot_vit_base_16_in21k',
-    pretrained=True,
-    source='github',
+The model can be loaded easily by
+
+```
+from spot.load_models import *
+
+model_name = 'spot_mae_b16'
+assert model_name in valid_models
+model = load_trained_model(
+    model_name=model_name,
+    sampler='grid_center',      # Spatial prior
+    ksize=16,                   # Window size
+    n_features=25,              # Number of tokens
 )
 ```
 
-This will load the model and downloaded the pretrained weights, stored in your local `torch.hub` directory. 
 
 ## More Examples
 
-We provide a [Jupyter notebook](https://nbviewer.jupyter.org/) as a sandbox for loading, evaluating, and extracting token placements for the models. 
+We provide a [Jupyter notebook](./get_started.ipynb) that illustrates loading, evaluating, and extracting token placements for the models. 
 
 ## Citation
 
