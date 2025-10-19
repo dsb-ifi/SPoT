@@ -34,14 +34,16 @@ abstract: Vision Transformers naturally accommodate sparsity, yet standard token
 
 carousels:
   - images: 
-    - image: figures/other/bird.png
-    - image: figures/other/doggy.png
-    - image: figures/other/ladybug.png
-    - image: figures/other/lionfish.png
-    - image: figures/other/snake.png
-    - image: figures/other/van.png
-    - image: figures/other/whale.png
+    - image: figures/spotapples.gif
+    - image: figures/spotdoggy.gif
+    - image: figures/spotlionfish.gif
+    - image: figures/spotparrot.gif
+    - image: figures/spotpenguin.gif
+    - image: figures/spotveil.gif
+    - image: figures/spotsnake.gif
 ---
+
+{% include carousel.html height="300" unit="px" number="1" %}
 
 ![Tokenization pipeline](figures/pipeline.png)
 *Figure 1: (Left) Astandard ViT splits the image into a fixed grid of non-overlapping patches. (Right) With SPoT, an adaptively chosen subset of subpixel-precise patches are extracted.*
