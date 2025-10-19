@@ -43,6 +43,25 @@ carousels:
     - image: figures/spotsnake.gif
 ---
 
+<style>
+.carousel-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:300px;
+}
+
+/* Preserve square aspect: never stretch horizontally */
+.carousel-item img{
+  height:100%;
+  width:auto !important;
+  max-width:100%;
+  object-fit:contain;
+  display:block;
+  margin:0 auto;
+}
+</style>
+
 {% include carousel.html height="300" unit="px" number="1" %}
 
 ![Tokenization pipeline](figures/pipeline.png)
