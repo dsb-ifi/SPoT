@@ -46,7 +46,7 @@ carousels:
 {% include carousel.html height="300" unit="px" number="1" %}
 
 ![Tokenization pipeline](figures/pipeline.png)
-*Figure 1: (Left) Astandard ViT splits the image into a fixed grid of non-overlapping patches. (Right) With SPoT, an adaptively chosen subset of subpixel-precise patches are extracted.*
+*Figure 1: (Left) A standard ViT splits the image into a fixed grid of non-overlapping patches. (Right) With SPoT, an adaptively chosen subset of subpixel-precise patches are extracted.*
 
 Sparsity - the fine art of doing more with less - is an attractive prospect in systems design and modeling.
 As models grow ever larger, sparse features alleviates the computational demands of a model to provide lower latency, lower memory overhead, and higher throughput - all indispensable properties for real-time applications.
